@@ -20,7 +20,7 @@
     "rules": {
       "max-len": [1, 120, 2, { "ignoreComments": true }],
       "no-console": "off",
-      "quotes": ["warn", "single"],
+      "quotes": ["error", "single"],
       "camelcase": ["error", {"properties": "always"}],
       "semi": ["warn", "always"]
     },
