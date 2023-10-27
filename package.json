@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CheezItMan/node-example.git"
+    "url": "git+https://github.com/AdaGold/node-example.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CheezItMan/node-example/issues"
+    "url": "https://github.com/AdaGold/node-example/issues"
   },
-  "homepage": "https://github.com/CheezItMan/node-example#readme",
+  "homepage": "https://github.com/AdaGold/node-example#readme",
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
