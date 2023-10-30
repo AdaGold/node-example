@@ -6,5 +6,5 @@ Before starting run `npm install` or `npm i` to install dependencies.
 
 Open up `src/index.js` and if you have eslint configured you should see something like this:
 
-![Eslint Example](images/eslint-example.png)
+![Eslint Example](images/eslint-example.png)  
 If you see the red squiggly line, then eslint is working properly.
