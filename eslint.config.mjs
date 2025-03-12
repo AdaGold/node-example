@@ -1,28 +1,24 @@
 import jest from "eslint-plugin-jest";
-import react from "eslint-plugin-react";
 import globals from "globals";
 import js from "@eslint/js";
 
 
 export default [
   js.configs.recommended,
-  { ignores: ["test", "*.config.*"] },
+  { ignores: ["*.config.*"] },
   {
     plugins: {
       jest,
-      react
     },
 
     languageOptions: {
       globals: {
         ...globals.browser,
         ...globals.node,
+        ...globals.jest,
       },
       ecmaVersion: "latest",
       sourceType: "module",   
-      parserOptions: {
-        ecmaFeatures: { jsx: true }
-      }
     },
 
     rules: {
@@ -37,11 +33,15 @@ export default [
           avoidEscape: true,
         },
       ],
-      camelcase: "error",
+      "camelcase": ["error", {"properties": "always"}],
+      "dot-notation": "warn",
+      "space-before-function-paren": "off",
+      "indent": ["warn", 2],
+      "padded-blocks": "off",
+      "no-trailing-spaces": "warn",
+      "array-bracket-spacing": "warn",
+      "no-multi-spaces": ["error", { "ignoreEOLComments": true }],
+      "no-var": "error",
     },
-
-    "settings": {
-      "react": { "version": "detect" }
-    }
   },
 ];
