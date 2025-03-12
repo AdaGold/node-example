@@ -21,9 +21,7 @@ export default [
       ecmaVersion: "latest",
       sourceType: "module",   
       parserOptions: {
-        ecmaFeatures: {
-            jsx: true
-        }
+        ecmaFeatures: { jsx: true }
       }
     },
 
@@ -33,9 +31,7 @@ export default [
       "no-console": "off",
       "comma-dangle": ["warn", "only-multiline"],
       "semi": ["warn", "always"],
-      quotes: [
-        2,
-        "single",
+      quotes: [2, "single",
         {
           allowTemplateLiterals: true,
           avoidEscape: true,
@@ -43,10 +39,9 @@ export default [
       ],
       camelcase: "error",
     },
+
     "settings": {
-      "react": {
-        "version": "detect"
-      }
+      "react": { "version": "detect" }
     }
   },
 ];
