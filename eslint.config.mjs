@@ -1,4 +1,5 @@
 import jest from "eslint-plugin-jest";
+import react from "eslint-plugin-react";
 import globals from "globals";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -14,11 +15,17 @@ const compat = new FlatCompat({
 });
 
 export default [
-  ...compat.extends("plugin:jest/recommended", "eslint:recommended"),
-  { ignores: ["test", "src/demo", "*.config.*"] },
+  ...compat.extends(
+    "plugin:jest/recommended", 
+    "plugin:react/recommended",
+    "eslint:recommended"
+  ),
+  { 
+    ignores: ["test", "src/demo", "*.config.*"] },
   {
     plugins: {
       jest,
+      react
     },
 
     languageOptions: {
@@ -27,19 +34,19 @@ export default [
         ...globals.node,
       },
 
-      ecmaVersion: 12,
+      ecmaVersion: "latest",
       sourceType: "module",
     },
 
     rules: {
+      "max-len": [1, 120, 2, { "ignoreComments": true }],
       "no-unused-vars": "warn",
-      "no-var": "warn",
       "no-console": "off",
-      "func-names": "off",
       "comma-dangle": ["warn", "only-multiline"],
+      "semi": ["warn", "always"],
 
       quotes: [
-        1,
+        2,
         "single",
         {
           allowTemplateLiterals: true,
@@ -49,5 +56,10 @@ export default [
 
       camelcase: "error",
     },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
   },
 ];
