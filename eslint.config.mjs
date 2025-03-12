@@ -1,27 +1,12 @@
 import jest from "eslint-plugin-jest";
 import react from "eslint-plugin-react";
 import globals from "globals";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
 import js from "@eslint/js";
-import { FlatCompat } from "@eslint/eslintrc";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
-});
 
 export default [
-  ...compat.extends(
-    "plugin:jest/recommended", 
-    "plugin:react/recommended",
-    "eslint:recommended"
-  ),
-  { 
-    ignores: ["test", "src/demo", "*.config.*"] },
+  js.configs.recommended,
+  { ignores: ["test", "src/demo", "*.config.*"] },
   {
     plugins: {
       jest,
@@ -33,10 +18,8 @@ export default [
         ...globals.browser,
         ...globals.node,
       },
-
       ecmaVersion: "latest",
-      sourceType: "module",
-      
+      sourceType: "module",   
       parserOptions: {
         ecmaFeatures: {
             jsx: true
@@ -50,7 +33,6 @@ export default [
       "no-console": "off",
       "comma-dangle": ["warn", "only-multiline"],
       "semi": ["warn", "always"],
-
       quotes: [
         2,
         "single",
@@ -59,7 +41,6 @@ export default [
           avoidEscape: true,
         },
       ],
-
       camelcase: "error",
     },
     "settings": {
