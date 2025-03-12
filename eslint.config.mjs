@@ -6,7 +6,7 @@ import js from "@eslint/js";
 
 export default [
   js.configs.recommended,
-  { ignores: ["test", "src/demo", "*.config.*"] },
+  { ignores: ["test", "*.config.*"] },
   {
     plugins: {
       jest,
