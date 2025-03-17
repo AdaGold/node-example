@@ -1,6 +1,7 @@
 import jest from "eslint-plugin-jest";
 import globals from "globals";
 import js from "@eslint/js";
+import stylistic from "@stylistic/eslint-plugin";
 
 
 export default [
@@ -9,6 +10,7 @@ export default [
   {
     plugins: {
       jest,
+      '@stylistic': stylistic
     },
 
     languageOptions: {
@@ -26,7 +28,7 @@ export default [
       "no-unused-vars": "warn",
       "no-console": "off",
       "comma-dangle": ["warn", "only-multiline"],
-      "semi": ["warn", "always"],
+      "@stylistic/semi": ["warn", "always"],
       quotes: [2, "single",
         {
           allowTemplateLiterals: true,
