@@ -1,6 +1,7 @@
 import jest from "eslint-plugin-jest";
 import globals from "globals";
 import js from "@eslint/js";
+import stylistic from "@stylistic/eslint-plugin";
 
 
 export default [
@@ -9,6 +10,7 @@ export default [
   {
     plugins: {
       jest,
+      '@stylistic': stylistic
     },
 
     languageOptions: {
@@ -22,12 +24,12 @@ export default [
     },
 
     rules: {
-      "max-len": [1, 120, 2, { "ignoreComments": true }],
+      "@stylistic/max-len": [1, 120, 2, { "ignoreComments": true }],
       "no-unused-vars": "warn",
       "no-console": "off",
-      "comma-dangle": ["warn", "only-multiline"],
-      "semi": ["warn", "always"],
-      quotes: [2, "single",
+      "@stylistic/comma-dangle": ["warn", "only-multiline"],
+      "@stylistic/semi": ["warn", "always"],
+      "@stylistic/quotes": [2, "single",
         {
           allowTemplateLiterals: true,
           avoidEscape: true,
@@ -35,12 +37,12 @@ export default [
       ],
       "camelcase": ["error", {"properties": "always"}],
       "dot-notation": "warn",
-      "space-before-function-paren": "off",
-      "indent": ["warn", 2],
-      "padded-blocks": "off",
-      "no-trailing-spaces": "warn",
-      "array-bracket-spacing": "warn",
-      "no-multi-spaces": ["error", { "ignoreEOLComments": true }],
+      "@stylistic/space-before-function-paren": "off",
+      "@stylistic/indent": ["warn", 2],
+      "@stylistic/padded-blocks": "off",
+      "@stylistic/no-trailing-spaces": "warn",
+      "@stylistic/array-bracket-spacing": "warn",
+      "@stylistic/no-multi-spaces": ["error", { "ignoreEOLComments": true }],
       "no-var": "error",
     },
   },
